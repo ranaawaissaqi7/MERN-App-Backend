@@ -13,7 +13,13 @@ dbConnect();
 // middelware
 app.use(express.json());
 
-app.use(cors())
+app.use(cors(
+    {
+        origin:["https://deploy-mern-1aws.vercel.app"],
+        methods:["POST","GET"],
+        credentials:true
+    }
+));
 
 // reqiures routes
 app.use(routes)
